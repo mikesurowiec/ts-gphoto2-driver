@@ -15,8 +15,6 @@
   },
   "homepage": "https://github.com/TypedProject/ts-gphoto2-driver",
   "scripts": {
-    "precommit": "lint-staged",
-    "postcommit": "git update-index --again",
     "prepublishOnly": "gflow release post",
     "gflow-release-pre": "",
     "semantic-release": "gflow release pre && semantic-release",
@@ -77,5 +75,11 @@
   },
   "release": {
     "branch": "production"
+  },
+  "husky": {
+    "hooks": {
+      "post-commit": "git update-index --again",
+      "pre-commit": "lint-staged"
+    }
   }
 }
